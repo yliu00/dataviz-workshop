@@ -22,6 +22,9 @@ export default {
   // The path to the source root.
   root: "src",
 
+  // For GitHub Pages project sites, set the repository base path.
+  base: "/dataviz-workshop/",
+
   // Some additional configuration options and their defaults:
   theme: "glacier", // try "light", "dark", "slate", etc.
   // header: "", // what to show in the header (HTML)

@@ -2,6 +2,7 @@
 title: Project Sketches
 ---
 
+## Intro
 <details>
     <summary>NASA Space Shuttle</summary>
 
@@ -9,22 +10,17 @@ title: Project Sketches
 
 </details>
 
-<table>
-    <tr>
-        <td><span class="red">A</span></td>
-        <td><span class="yellow">B</span></td>
-        <td><span class="green">C</span></td>
-    </tr>
-    <tr>
-        <td colspan="3" style="text-align: center;"><span class="blue">D</span></td>
-    </tr>
-    <tr>
-        <td><span class="yellow">E</span></td>
-        <td><span class="red">F</span></td>
-        <td><span class="yellow">G</span></td>
-    </tr>
-</table>
+<div class="grid grid-cols-3">
+    <div class="card"><h1 class="red">A</h1></div>
+    <div class="card"><h1 class="yellow">B</h1></div>
+    <div class="card"><h1 class="green">C</h1></div>
+    <div class="card grid-colspan-3" style="text-align: center;"><h1 class="blue">D</h1></div>
+    <div class="card"><h1 class="yellow">E</h1></div>
+    <div class="card"><h1 class="red">F</h1></div>
+    <div class="card"><h1 class="yellow">G</h1></div>
+</div>
 
+### Long text
 ```js
 const longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse egestas mauris augue, eu rutrum arcu \nviverra in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. \nDuis consectetur velit ac lacus convallis auctor nec ut leo. Phasellus urna sem, rhoncus et convallis \nvel, vestibulum a felis. Etiam metus massa, hendrerit vitae rutrum non, rutrum quis magna. Nunc arcu \ndui, lobortis nec nunc vitae, elementum sollicitudin nulla. Praesent non enim eu odio sagittis ultricies \nat tempor nisi. Nunc id ipsum non nibh convallis sagittis rhoncus et tellus. Duis iaculis convallis \nlectus, at feugiat enim pretium ac. Ut posuere malesuada lorem quis lobortis".split(" ")
 ```
@@ -37,6 +33,7 @@ display(longText.slice(1,n).join(" "));
 ```
 
 ## Gapminder
+### Contents
 ```js
 const gapminder = FileAttachment("./data/gapminder.zip").zip();
 ```
@@ -46,6 +43,7 @@ const gapminderFiles = gapminder.filenames;
 display(gapminderFiles);
 ```
 
+### Continents.csv
 ```js
 const continentsFilename = gapminderFiles.find((name) => /continents/i.test(name));
 const continents = await gapminder.file(continentsFilename).csv();
@@ -55,6 +53,7 @@ const continents = await gapminder.file(continentsFilename).csv();
 display(Inputs.table(continents));
 ```
 
+### Countries list
 ```js
 const countryList = document.createElement("ul");
 for (const row of continents) {
